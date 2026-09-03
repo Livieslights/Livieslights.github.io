@@ -4,19 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Livie Lights | Creative Marketing</title>
+<title>Livie Lights | Creative Marketing & Community</title>
 
 <style>
 
-/* =====================================
-   LIVIE LIGHTS
-   Scrapbook • Hippie • Denim • Pink
-===================================== */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Patrick+Hand&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+    --pink: #f7a9c4;
+    --hotpink: #ed6f9b;
+    --cream: #fff7e8;
+    --green: #9abf91;
+    --darkgreen: #41634a;
+    --denim: #6689a8;
+    --dark: #29352d;
+    --white: #fffdf8;
+    --yellow: #f7d96c;
+}
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -24,124 +33,1535 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f8eee7;
-    color: #3e3439;
-    line-height: 1.6;
+    background-color: var(--cream);
+    color: var(--dark);
+    font-family: "DM Sans", sans-serif;
     overflow-x: hidden;
-}
-
-/* =====================================
-   BACKGROUND
-===================================== */
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    opacity: .18;
-    z-index: 999;
 
     background-image:
-        radial-gradient(#8c6d60 0.7px, transparent 0.7px);
-
-    background-size: 7px 7px;
+        radial-gradient(#d9bda8 1px, transparent 1px);
+    background-size: 18px 18px;
 }
 
-/* =====================================
-   NAV
-===================================== */
+/* ---------------- NAV ---------------- */
 
 nav {
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 
-    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    background: #fff8f3;
-    border-bottom: 2px dashed #d88ca7;
+    padding: 18px 7%;
 
-    text-align: center;
+    background: rgba(255,247,232,.94);
+    backdrop-filter: blur(8px);
+
+    border-bottom: 2px solid #e4cdbd;
 }
 
-nav a {
-    color: #4c3d43;
+.logo {
+    font-family: "Patrick Hand", cursive;
+    font-size: 2rem;
+    color: var(--hotpink);
+    transform: rotate(-3deg);
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
     text-decoration: none;
-
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-
-    margin: 0 9px;
+    color: var(--dark);
+    font-weight: 600;
 }
 
-nav a:hover {
-    color: #d64d82;
+.nav-links a:hover {
+    color: var(--hotpink);
 }
 
-/* =====================================
-   HERO
-===================================== */
+/* ---------------- HERO ---------------- */
 
 .hero {
-    min-height: 95vh;
+    min-height: 92vh;
+    padding: 70px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
 
     position: relative;
     overflow: hidden;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 70px 7%;
-
     background:
-        radial-gradient(circle at 15% 20%, #ffd0df 0 5%, transparent 5.5%),
-        radial-gradient(circle at 90% 18%, #d7e5d0 0 5%, transparent 5.5%),
-        linear-gradient(135deg, #fff8f3, #f8dce7);
+        linear-gradient(
+            135deg,
+            #ffd5e4 0%,
+            #fff3df 48%,
+            #cde0c9 100%
+        );
 }
 
 .hero-content {
+    width: 55%;
     position: relative;
     z-index: 5;
-
-    max-width: 900px;
-
-    text-align: center;
 }
 
-/* scrapbook tape */
+.small-label {
+    display: inline-block;
+
+    background: var(--yellow);
+    padding: 8px 16px;
+
+    font-family: "Patrick Hand", cursive;
+    font-size: 1.2rem;
+
+    transform: rotate(-3deg);
+
+    box-shadow: 4px 4px 0 #b9a15c;
+}
+
+.hero h1 {
+    margin-top: 20px;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(4rem, 9vw, 8.5rem);
+
+    line-height: .85;
+
+    color: var(--darkgreen);
+
+    text-shadow:
+        4px 4px 0 #fff,
+        7px 7px 0 var(--pink);
+
+    transform: rotate(-2deg);
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--hotpink);
+}
+
+.hero-subtitle {
+    margin-top: 35px;
+
+    max-width: 600px;
+
+    font-size: 1.25rem;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-block;
+
+    padding: 13px 24px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+    font-weight: 700;
+
+    border: 2px solid var(--dark);
+
+    transition: .2s;
+}
+
+.button:hover {
+    transform: translateY(-5px) rotate(-2deg);
+}
+
+.button.primary {
+    background: var(--hotpink);
+    color: white;
+    box-shadow: 5px 5px 0 var(--dark);
+}
+
+.button.secondary {
+    background: white;
+    color: var(--dark);
+}
+
+/* HERO SCRAPBOOK OBJECTS */
+
+.hero-art {
+    width: 40%;
+    min-height: 500px;
+    position: relative;
+}
+
+.flower {
+    position: absolute;
+    font-size: 4rem;
+}
+
+.flower.one {
+    top: 5%;
+    left: 10%;
+    transform: rotate(-15deg);
+}
+
+.flower.two {
+    bottom: 8%;
+    right: 4%;
+    transform: rotate(20deg);
+}
+
+.star {
+    position: absolute;
+    font-size: 2rem;
+}
+
+.star.one {
+    top: 10%;
+    right: 15%;
+}
+
+.star.two {
+    bottom: 22%;
+    left: 2%;
+}
+
+.sunglasses {
+    position: absolute;
+
+    width: 230px;
+    height: 110px;
+
+    top: 22%;
+    left: 20%;
+
+    transform: rotate(8deg);
+
+    z-index: 3;
+}
+
+.glass {
+    position: absolute;
+
+    width: 90px;
+    height: 65px;
+
+    border: 8px solid #30352f;
+    border-radius: 20px 20px 35px 35px;
+
+    background: rgba(247,169,196,.65);
+}
+
+.glass.left {
+    left: 0;
+}
+
+.glass.right {
+    right: 0;
+}
+
+.bridge {
+    position: absolute;
+
+    width: 55px;
+    height: 8px;
+
+    background: #30352f;
+
+    top: 30px;
+    left: 87px;
+}
+
+/* FLOWER PLANT */
+
+.plant {
+    position: absolute;
+    bottom: 10px;
+    right: 10%;
+
+    font-size: 8rem;
+
+    transform: rotate(-5deg);
+}
+
+/* ---------------- SECTION ---------------- */
+
+section {
+    padding: 100px 7%;
+    position: relative;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-heading .tiny {
+    font-family: "Patrick Hand", cursive;
+    font-size: 1.5rem;
+    color: var(--hotpink);
+}
+
+.section-heading h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    color: var(--darkgreen);
+}
+
+/* ---------------- ABOUT ---------------- */
+
+.about {
+    background: #fffdf8;
+}
+
+.about-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.paper {
+    background: white;
+
+    padding: 45px;
+
+    border: 1px solid #ddd0c0;
+
+    box-shadow:
+        10px 10px 0 #f5c2d5,
+        18px 18px 0 #dce8d7;
+
+    transform: rotate(-1deg);
+}
+
+.paper h3 {
+    font-family: "Patrick Hand", cursive;
+    font-size: 2.4rem;
+    color: var(--hotpink);
+
+    margin-bottom: 15px;
+}
+
+.paper p {
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.about-photo {
+    min-height: 450px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #7ea3be,
+            #527b9b
+        );
+
+    border-radius: 10px;
+
+    position: relative;
+
+    border: 5px solid white;
+
+    box-shadow: 12px 12px 0 var(--dark);
+
+    transform: rotate(3deg);
+}
+
+/* DENIM POCKET */
+
+.denim-pocket {
+    position: absolute;
+
+    width: 230px;
+    height: 170px;
+
+    background: #7397b5;
+
+    bottom: 55px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 10px 10px 40px 40px;
+
+    border: 4px solid #52728c;
+
+    box-shadow:
+        inset 0 0 0 2px #9bb5ca;
+}
+
+.denim-pocket::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 130px;
+
+    border: 3px dashed #b9cad7;
+
+    border-radius: 5px 5px 30px 30px;
+
+    top: 15px;
+    left: 20px;
+}
+
+.pocket-note {
+    position: absolute;
+
+    top: 45px;
+    left: 42px;
+
+    background: #fff4a9;
+
+    padding: 15px;
+
+    font-family: "Patrick Hand", cursive;
+
+    transform: rotate(-5deg);
+
+    box-shadow: 3px 3px 0 #4f6575;
+}
+
+.thread {
+    position: absolute;
+
+    width: 90%;
+    height: 3px;
+
+    border-top: 3px dashed #d5e2eb;
+
+    top: 12px;
+    left: 5%;
+}
+
+/* ---------------- EXPERIENCE ---------------- */
+
+.experience {
+    background:
+        linear-gradient(
+            135deg,
+            #dbe9d5,
+            #fff1dc
+        );
+}
+
+.experience-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.experience-card {
+    background: white;
+
+    padding: 30px;
+
+    border: 2px solid var(--dark);
+
+    box-shadow: 7px 7px 0 var(--pink);
+
+    transition: .25s;
+}
+
+.experience-card:nth-child(2) {
+    transform: rotate(2deg);
+}
+
+.experience-card:nth-child(3) {
+    transform: rotate(-2deg);
+}
+
+.experience-card:hover {
+    transform: translateY(-8px) rotate(0);
+}
+
+.experience-card .emoji {
+    font-size: 3rem;
+}
+
+.experience-card h3 {
+    margin: 15px 0 8px;
+
+    font-family: "Playfair Display", serif;
+}
+
+.experience-card p {
+    line-height: 1.6;
+}
+
+/* ---------------- SERVICES ---------------- */
+
+.services {
+    background: var(--cream);
+}
+
+.services-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service {
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    border: 2px solid #dac7b8;
+
+    position: relative;
+
+    min-height: 250px;
+}
+
+.service:nth-child(odd) {
+    background: #ffe5ee;
+}
+
+.service:nth-child(even) {
+    background: #e4efdf;
+}
+
+.service-icon {
+    font-size: 2.5rem;
+}
+
+.service h3 {
+    font-family: "Playfair Display", serif;
+    margin: 15px 0;
+}
+
+.service p {
+    line-height: 1.6;
+}
+
+/* ---------------- PORTFOLIO ---------------- */
+
+.portfolio {
+    background: #fffdf8;
+}
+
+.portfolio-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 60px 40px;
+}
+
+.polaroid {
+    background: white;
+
+    padding: 15px 15px 45px;
+
+    box-shadow: 8px 8px 0 #dfb8c8;
+
+    position: relative;
+
+    transition: .25s;
+}
+
+.polaroid:nth-child(1) {
+    transform: rotate(-3deg);
+}
+
+.polaroid:nth-child(2) {
+    transform: rotate(2deg);
+}
+
+.polaroid:nth-child(3) {
+    transform: rotate(2deg);
+}
+
+.polaroid:nth-child(4) {
+    transform: rotate(-2deg);
+}
+
+.polaroid:hover {
+    transform: rotate(0) translateY(-10px) scale(1.02);
+}
+
+.photo-placeholder {
+    height: 300px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 5rem;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7c1d4,
+            #c8dfc4
+        );
+}
+
+.polaroid h3 {
+    margin-top: 20px;
+
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 2rem;
+}
+
+.polaroid p {
+    margin-top: 5px;
+    color: #5d665e;
+}
+
+/* tape */
 
 .tape {
     position: absolute;
 
-    width: 130px;
-    height: 35px;
+    width: 100px;
+    height: 30px;
 
-    background: rgba(247, 207, 165, .72);
+    background: rgba(255,231,151,.8);
 
-    transform: rotate(-6deg);
+    top: -15px;
+    left: 50%;
 
-    opacity: .8;
+    transform: translateX(-50%) rotate(-3deg);
+
+    z-index: 5;
 }
 
-.tape.one {
-    top: 7%;
-    left: 8%;
+/* ---------------- PROCESS ---------------- */
+
+.process {
+    background:
+        linear-gradient(
+            135deg,
+            #f8c1d5,
+            #fcefdc
+        );
 }
 
-.tape.two {
-    right: 7%;
-    bottom: 10%;
+.process-grid {
+    max-width: 1000px;
+    margin: auto;
 
-    transform: rotate(8deg);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
-/* floating decorations */
+.process-step {
+    text-align: center;
+}
 
-.decor {
+.number {
+    margin: auto;
+
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 2rem;
+
+    border: 2px solid var(--dark);
+}
+
+.process-step h3 {
+    margin: 15px 0 8px;
+}
+
+/* ---------------- CONTACT ---------------- */
+
+.contact {
+    background: var(--darkgreen);
+    color: white;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+.contact h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(3rem, 7vw, 6rem);
+
+    color: #ffd0df;
+}
+
+.contact p {
+    max-width: 650px;
+    margin: 25px auto;
+
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+.contact-buttons {
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.contact .button.primary {
+    background: var(--hotpink);
+    border-color: white;
+}
+
+.contact .button.secondary {
+    background: white;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer {
+    background: #26372c;
+
+    color: #dce9dc;
+
+    padding: 35px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+footer .footer-logo {
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 1.8rem;
+
+    color: #f6a8c2;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+
+    margin-left: 15px;
+}
+
+/* ---------------- DECORATIONS ---------------- */
+
+.sticker {
     position: absolute;
-    z-index: 2;
-   
+
+    padding: 10px 15px;
+
+    background: white;
+
+    border: 2px solid var(--dark);
+
+    font-family: "Patrick Hand", cursive;
+
+    box-shadow: 4px 4px 0 var(--dark);
+
+    z-index: 10;
+}
+
+.sticker.flowers {
+    top: 35px;
+    right: 5%;
+
+    transform: rotate(7deg);
+}
+
+.sticker.creative {
+    bottom: 30px;
+    left: 4%;
+
+    transform: rotate(-7deg);
+
+    background: var(--yellow);
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width: 850px) {
+
+    nav {
+        padding: 15px 5%;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 70px 6%;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-art {
+        width: 100%;
+
+        min-height: 400px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 20px;
+    }
+
+    footer {
+        text-align: center;
+        justify-content: center;
+    }
+
+}
+
+@media(max-width: 500px) {
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    section {
+        padding: 70px 6%;
+    }
+
+    .paper {
+        padding: 30px;
+    }
+
+    .about-photo {
+        min-height: 350px;
+    }
+
+    .sunglasses {
+        transform: scale(.8) rotate(8deg);
+        left: 10%;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+
+<nav>
+
+    <div class="logo">
+        Livie Lights ✦
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-label">
+            creative girl doing creative things ✿
+        </div>
+
+        <h1>
+            Livie
+            <span>Lights.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+
+            Creative marketing, social media, events & community
+            storytelling — with a little more color, personality
+            and purpose.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#portfolio" class="button primary">
+                See My Work ✦
+            </a>
+
+            <a href="#contact" class="button secondary">
+                Let's Create
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-art">
+
+        <div class="flower one">🌸</div>
+
+        <div class="flower two">🌼</div>
+
+        <div class="star one">✦</div>
+
+        <div class="star two">✧</div>
+
+        <div class="sunglasses">
+
+            <div class="glass left"></div>
+
+            <div class="glass right"></div>
+
+            <div class="bridge"></div>
+
+        </div>
+
+        <div class="plant">
+            🪴
+        </div>
+
+        <div class="sticker flowers">
+            stay creative ✿
+        </div>
+
+        <div class="sticker creative">
+            make it meaningful!
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="section-heading">
+
+        <div class="tiny">
+            a little about me ✿
+        </div>
+
+        <h2>
+            Behind the Lights
+        </h2>
+
+    </div>
+
+
+    <div class="about-grid">
+
+        <div class="paper">
+
+            <h3>
+                hi, I'm Livie! 💗
+            </h3>
+
+            <p>
+                I'm a creative marketer and community-focused
+                storyteller who loves turning ideas into things
+                people actually want to see, share and connect with.
+            </p>
+
+            <p>
+                My interests live somewhere between social media,
+                psychology, events, design, storytelling and
+                meaningful community work.
+            </p>
+
+            <p>
+                Throughout high school, I was actively involved in
+                volunteering and community service. I continue to
+                build connections through local organizations and
+                initiatives, including partnering with Volunteer Lubbock.
+            </p>
+
+            <p>
+                I believe good marketing shouldn't just look pretty.
+                It should make people feel something.
+            </p>
+
+        </div>
+
+
+        <div class="about-photo">
+
+            <div class="thread"></div>
+
+            <div class="denim-pocket">
+
+                <div class="pocket-note">
+                    create<br>
+                    something<br>
+                    meaningful ✦
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section class="experience" id="experience">
+
+    <div class="section-heading">
+
+        <div class="tiny">
+            things I've been part of ✿
+        </div>
+
+        <h2>
+            Experience
+        </h2>
+
+    </div>
+
+
+    <div class="experience-grid">
+
+        <div class="experience-card">
+
+            <div class="emoji">
+                🧠
+            </div>
+
+            <h3>
+                NAMI
+            </h3>
+
+            <p>
+                Social media, outreach, event ideas, community
+                engagement and mental health advocacy.
+            </p>
+
+        </div>
+
+
+        <div class="experience-card">
+
+            <div class="emoji">
+                🤝
+            </div>
+
+            <h3>
+                Volunteer Lubbock
+            </h3>
+
+            <p>
+                Building community connections and exploring
+                opportunities for local volunteer engagement.
+            </p>
+
+        </div>
+
+
+        <div class="experience-card">
+
+            <div class="emoji">
+                🌷
+            </div>
+
+            <h3>
+                Community Service
+            </h3>
+
+            <p>
+                Years of volunteering, school involvement and
+                community-focused projects throughout high school.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+    <div class="section-heading">
+
+        <div class="tiny">
+            let's make something cool ✦
+        </div>
+
+        <h2>
+            What I Do
+        </h2>
+
+    </div>
+
+
+    <div class="services-grid">
+
+        <div class="service">
+
+            <div class="service-icon">
+                📱
+            </div>
+
+            <h3>
+                Social Media
+            </h3>
+
+            <p>
+                Content planning, captions, reels, posts,
+                engagement ideas and social media strategy.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">
+                🎨
+            </div>
+
+            <h3>
+                Creative Design
+            </h3>
+
+            <p>
+                Canva graphics, flyers, social content,
+                branding concepts and visual storytelling.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">
+                🎪
+            </div>
+
+            <h3>
+                Events
+            </h3>
+
+            <p>
+                Event concepts, planning, promotion,
+                community engagement and coordination.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">
+                📸
+            </div>
+
+            <h3>
+                Content Creation
+            </h3>
+
+            <p>
+                Photo ideas, video concepts, reels,
+                behind-the-scenes content and storytelling.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">
+                📣
+            </div>
+
+            <h3>
+                Outreach
+            </h3>
+
+            <p>
+                Community partnerships, campaigns,
+                outreach ideas and audience engagement.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">
+                💡
+            </div>
+
+            <h3>
+                Creative Strategy
+            </h3>
+
+            <p>
+                Helping organizations turn an idea into
+                a creative, organized and actionable plan.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PORTFOLIO -->
+
+<section class="portfolio" id="portfolio">
+
+    <div class="section-heading">
+
+        <div class="tiny">
+            things I've created ✿
+        </div>
+
+        <h2>
+            My Portfolio
+        </h2>
+
+    </div>
+
+
+    <div class="portfolio-grid">
+
+
+        <div class="polaroid">
+
+            <div class="tape"></div>
+
+            <div class="photo-placeholder">
+                🧠
+            </div>
+
+            <h3>
+                NAMI
+            </h3>
+
+            <p>
+                Social media • Outreach • Mental health advocacy
+            </p>
+
+        </div>
+
+
+        <div class="polaroid">
+
+            <div class="tape"></div>
+
+            <div class="photo-placeholder">
+                💡
+            </div>
+
+            <h3>
+                Little Light Studios
+            </h3>
+
+            <p>
+                Creative brand • Mental health • Content
+            </p>
+
+        </div>
+
+
+        <div class="polaroid">
+
+            <div class="tape"></div>
+
+            <div class="photo-placeholder">
+                📸
+            </div>
+
+            <h3>
+                Social Media
+            </h3>
+
+            <p>
+                Content creation • Reels • Campaign concepts
+            </p>
+
+        </div>
+
+
+        <div class="polaroid">
+
+            <div class="tape"></div>
+
+            <div class="photo-placeholder">
+                🎪
+            </div>
+
+            <h3>
+                Events & Outreach
+            </h3>
+
+            <p>
+                Event concepts • Promotion • Community engagement
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROCESS -->
+
+<section class="process">
+
+    <div class="section-heading">
+
+        <div class="tiny">
+            how we make the magic happen ✨
+        </div>
+
+        <h2>
+            My Process
+        </h2>
+
+    </div>
+
+
+    <div class="process-grid">
+
+        <div class="process-step">
+
+            <div class="number">
+                01
+            </div>
+
+            <h3>
+                Brainstorm
+            </h3>
+
+            <p>
+                We figure out the idea, audience and goals.
+            </p>
+
+        </div>
+
+
+        <div class="process-step">
+
+            <div class="number">
+                02
+            </div>
+
+            <h3>
+                Plan
+            </h3>
+
+            <p>
+                I turn the idea into a clear creative direction.
+            </p>
+
+        </div>
+
+
+        <div class="process-step">
+
+            <div class="number">
+                03
+            </div>
+
+            <h3>
+                Create
+            </h3>
+
+            <p>
+                Graphics, content, campaigns and experiences come together.
+            </p>
+
+        </div>
+
+
+        <div class="process-step">
+
+            <div class="number">
+                04
+            </div>
+
+            <h3>
+                Connect
+            </h3>
+
+            <p>
+                We get the work in front of the right people.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <h2>
+        Let's make<br>
+        something meaningful.
+    </h2>
+
+    <p>
+        Have an organization, small business, event or creative
+        idea that needs a little extra light? Let's talk.
+    </p>
+
+    <div class="contact-buttons">
+
+        <a
+            href="mailto:Livieslights@yahoo.com"
+            class="button primary"
+        >
+            Email Me ✉
+        </a>
+
+        <a
+            href="https://www.instagram.com/livieslights/"
+            target="_blank"
+            class="button secondary"
+        >
+            Instagram
+        </a>
+
+        <a
+            href="https://www.linkedin.com/in/liv-padron-645b9738b/"
+            target="_blank"
+            class="button secondary"
+        >
+            LinkedIn
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">
+        Livie Lights ✦
+    </div>
+
+    <div>
+        Creative Marketing • Community • Storytelling
+    </div>
+
+    <div>
+
+        <a
+            href="https://www.instagram.com/livieslights/"
+            target="_blank"
+        >
+            Instagram
+        </a>
+
+        <a
+            href="https://www.linkedin.com/in/liv-padron-645b9738b/"
+            target="_blank"
+        >
+            LinkedIn
+        </a>
+
+        <a
+            href="mailto:Livieslights@yahoo.com"
+        >
+            Email
+        </a>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
